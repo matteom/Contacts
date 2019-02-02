@@ -16,6 +16,16 @@ class EditContactViewController: UITableViewController {
 	@IBOutlet weak var phoneTextField: UITextField!
 	
 	var contact: Contact?
+//	let contact: Contact
+
+//	init(contact: Contact) {
+//		self.contact = contact
+//		super.init(nibName: nil, bundle: nil)
+//	}
+	
+//	required init?(coder aDecoder: NSCoder) {
+//		fatalError("init(coder:) has not been implemented")
+//	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,6 +34,16 @@ class EditContactViewController: UITableViewController {
 		positionTextField.text = contact?.position
 		emailTextField.text = contact?.email
 		phoneTextField.text = contact?.phone
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let photo = imageView.image,
+		let name = nameTextField.text,
+		let position = positionTextField.text,
+		let email = emailTextField.text,
+		let phone = phoneTextField.text {
+			contact = Contact.init(photo: photo, name: name, position: position, email: email, phone: phone)
+		}
 	}
 }
 

@@ -44,6 +44,7 @@ class ContactsViewController: UITableViewController {
 				return
 		}
 		detailViewController.contact = contacts[index]
+		detailViewController.delegate = self
 	}
 	
 	override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -54,6 +55,12 @@ class ContactsViewController: UITableViewController {
 			self?.stateController?.favorites.append(favorite)
 		}
 		return [favoriteAction]
+	}
+}
+
+extension ContactsViewController: DetailViewControllerDelegate {
+	func update(_ contact: Contact) {
+		stateController?.update(contact)
 	}
 }
 

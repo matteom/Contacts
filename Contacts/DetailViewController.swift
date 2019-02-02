@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate: AnyObject {
+	func update(_ contact: Contact)
+}
+
 class DetailViewController: UITableViewController {
 	@IBOutlet var imageView: UIImageView?
 	@IBOutlet var nameLabel: UILabel?
@@ -16,9 +20,10 @@ class DetailViewController: UITableViewController {
 	@IBOutlet var phoneButton: UIButton?
 	
 	var contact: Contact?
+	weak var delegate: DetailViewControllerDelegate?
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		imageView?.image = contact?.photo
 		nameLabel?.text = contact?.name
 		positionLabel?.text = contact?.position
@@ -30,6 +35,26 @@ class DetailViewController: UITableViewController {
 		if let navigationController = segue.destination as? UINavigationController,
 			let editContactViewController = navigationController.viewControllers.first as? EditContactViewController {
 			editContactViewController.contact = contact
+		}
+	}
+	
+//	@IBAction func login(_ sender: Any) {
+//		guard let contact = contact else {
+//			return
+//		}
+//		let editViewController = EditContactViewController(contact: contact)
+//		let navigationViewController = UINavigationController(rootViewController: editViewController)
+//		show(navigationViewController, sender: nil)
+//	}
+	
+	@IBAction func cancel(_ unwindSegue: UIStoryboardSegue) {}
+	
+	@IBAction func save(_ unwindSegue: UIStoryboardSegue) {
+		if let editViewController = unwindSegue.source as? EditContactViewController {
+			contact = editViewController.contact
+			if let contact = contact {
+				delegate?.update(contact)
+			}
 		}
 	}
 }

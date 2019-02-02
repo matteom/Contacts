@@ -9,7 +9,7 @@
 import Foundation
 
 class StateController {
-	let contacts: [Contact] = [
+	private(set) var contacts: [Contact] = [
 		Contact(photo: #imageLiteral(resourceName: "Madison"), name: "Madison Thompson", position: "Sales, Gale Foods", email: "madison@galefoods.com", phone: "4-(968) 705-1370"),
 		Contact(photo: #imageLiteral(resourceName: "Tyler"), name: "Tyler Porter", position: "Software developer, Prophecy", email: "tyles@propehcy.com", phone: "2-(513) 832-7517"),
 		Contact(photo: #imageLiteral(resourceName: "Katherine"), name: "Katherine Price", position: "Marketing, Golden Roads", email: "katherine@goldenroads.com", phone: "1-(722) 844-1495"),
@@ -18,4 +18,13 @@ class StateController {
 	]
 	
 	var favorites: [Contact] = []
+	
+	func update(_ contact: Contact) {
+		for (index, old) in contacts.enumerated() {
+			if old.name == contact.name {
+				contacts[index] = contact
+				break
+			}
+		}
+	}
 }
