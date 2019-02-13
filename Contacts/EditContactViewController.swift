@@ -16,16 +16,6 @@ class EditContactViewController: UITableViewController {
 	@IBOutlet weak var phoneTextField: UITextField!
 	
 	var contact: Contact?
-//	let contact: Contact
-
-//	init(contact: Contact) {
-//		self.contact = contact
-//		super.init(nibName: nil, bundle: nil)
-//	}
-	
-//	required init?(coder aDecoder: NSCoder) {
-//		fatalError("init(coder:) has not been implemented")
-//	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

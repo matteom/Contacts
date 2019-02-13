@@ -32,20 +32,8 @@ class DetailViewController: UITableViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let navigationController = segue.destination as? UINavigationController,
-			let editContactViewController = navigationController.viewControllers.first as? EditContactViewController {
-			editContactViewController.contact = contact
-		}
+		segue.forward(contact, to: segue.destination)
 	}
-	
-//	@IBAction func login(_ sender: Any) {
-//		guard let contact = contact else {
-//			return
-//		}
-//		let editViewController = EditContactViewController(contact: contact)
-//		let navigationViewController = UINavigationController(rootViewController: editViewController)
-//		show(navigationViewController, sender: nil)
-//	}
 	
 	@IBAction func cancel(_ unwindSegue: UIStoryboardSegue) {}
 	

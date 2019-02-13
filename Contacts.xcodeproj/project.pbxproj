@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		953DBFDF2205E3DD0037A109 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DBFDE2205E3DD0037A109 /* UIStoryboardSegue.swift */; };
 		95B348E821FDCA5400D24BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B348E721FDCA5400D24BE5 /* AppDelegate.swift */; };
 		95B348EA21FDCA5400D24BE5 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B348E921FDCA5400D24BE5 /* ContactsViewController.swift */; };
 		95B348ED21FDCA5400D24BE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B348EB21FDCA5400D24BE5 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		953DBFDE2205E3DD0037A109 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegue.swift; sourceTree = "<group>"; };
 		95B348E421FDCA5400D24BE5 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B348E721FDCA5400D24BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B348E921FDCA5400D24BE5 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				95C408D821FE039900E87E9D /* EditContactViewController.swift */,
 				95B348FB21FDDC0B00D24BE5 /* Contact.swift */,
 				95CEC58922006C2200C65D92 /* StateController.swift */,
+				953DBFDE2205E3DD0037A109 /* UIStoryboardSegue.swift */,
 				95B348EB21FDCA5400D24BE5 /* Main.storyboard */,
 				95B348F921FDD29000D24BE5 /* Views.swift */,
 				95B348EE21FDCA5500D24BE5 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 			files = (
 				95B348FC21FDDC0B00D24BE5 /* Contact.swift in Sources */,
 				95CEC58A22006C2200C65D92 /* StateController.swift in Sources */,
+				953DBFDF2205E3DD0037A109 /* UIStoryboardSegue.swift in Sources */,
 				95B348EA21FDCA5400D24BE5 /* ContactsViewController.swift in Sources */,
 				95C408D721FDE22B00E87E9D /* DetailViewController.swift in Sources */,
 				95B348E821FDCA5400D24BE5 /* AppDelegate.swift in Sources */,
